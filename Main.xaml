@@ -1,17 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.rasse="Mops" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="rasse" Type="InArgument(x:String)" />
-    <x:Property Name="out_imageUri" Type="OutArgument(x:String)" />
-    <x:Property Name="out_dogDescription" Type="OutArgument(x:String)" />
-    <x:Property Name="out_exceptionDescription" Type="OutArgument(x:String)" />
+    <x:Property Name="out_URL" Type="OutArgument(x:String)" />
+    <x:Property Name="info" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1146,1753</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>871.333333333333,1273.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="27">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -34,15 +32,34 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.ComponentModel</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -60,300 +77,142 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1019,1688" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Extract Bachelorarbeit Scraping Sequence" sap:VirtualizedContainerService.HintSize="602,1208.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="x:String" Default="C:\Users\cosmi\Desktop\Links.xlsx" Name="ExcelPath" />
+      <Variable x:TypeArguments="x:String" Default="https://intra.zhaw.ch/departemente/school-of-management-and-law/studierende/informationen-a-z#c32921" Name="IntranetURL" />
+      <Variable x:TypeArguments="x:String" Name="ItemsURL" />
+      <Variable x:TypeArguments="x:String" Name="RowURL" />
+      <Variable x:TypeArguments="x:String" Default="C:\Users\cosmi\Desktop\Filename.pdf" Name="PdfPath" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="977,1596" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="True" Url="https://www.hundeo.com/hunderassen/">
-      <ui:OpenBrowser.Body>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Intranet" sap:VirtualizedContainerService.HintSize="560,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
+      <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="943,1495" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,574.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,83.3333333333333" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[IntranetURL]" Version="V1" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'Bachelorarbeit'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://intra.zhaw.ch/departemente/school-of-management-and-law/studierende/informationen-a-z#c32921" DesignTimeRectangle="1075, 421, 15, 20" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl idx='2' parentid='c32921' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='c32921' tag='SPAN' class='glyphicon' aaname='' /&gt;" Guid="c9a169f2-c8dc-4093-9024-3643501a4f08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAYAAAAYl8YPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGvSURBVEhLrZDNT+JQFMXvn15C7IaaZhYKbmcCmDjRDYquNDMCYZKZaFtqv6DQUvwzztzXj/FRWscgi18P9517Du2j19cEh4KSZI3NZo0kiXMt5rL+3+eyOD3ItGC/mdbrCIeC4jj7EccrRuj+M0XRElG0Yj6vedlhoOUyxGoVQmjBvjOXLfLDzyuF7j2+agqUpo6LX3OEoWBRo7Jv4WdPR7PRhP59mp6TcalDUbhMoHYwNLLAYvG+Ts+1t5xygoHDZS+DE+kwK7yzAszn9Vi3HahypsGZIADNgwn6x5IhOO5j4vt5ONMgEMpMe9Aa8r6Kzq2Z+uT7HgLzAd9KherZEGbgIfVz9Z8G6Kjbe1p//M9Py1KMYeXie774Q6PwGfI8FwLXdeCNu6VP4MLeCJ47QnfnKroYu1m2yJN4yDzftLcvl+9Ea6nSzHDRyNnOCchxXlDm8eJLqVBCbePmaTcjqCwTPPZau0WNFrqj6n0B2fYMtm0zZf2N6/aRVHaE08Gfir03zctqmP1AX2/yG3HR1aR6R4JmMwsCy8q0jo/4JB6HgkzTgGmajNA6PuIb+AurlASoIa3AbwAAAABJRU5ErkJggg==" InformativeScreenshot="175f80bd26200186ee9845f42eb0ca1b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ZHAW Intranet: Informationen A-Z' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="418, 421, 657, 26" ElementType="Text" FriendlyName="'Bachelorarbeit'" FullSelectorArgument="&lt;webctrl parentid='c32921' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='c32921' tag='SPAN' type='' class='' aaname='Bachelorarbeit' check:innerText='Bachelorarbeit' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='URL'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='0' name='Column0' attr='text' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,158.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="418, -216, 672, 1185" FriendlyName="'Marktplatz MoLeNa'" FullSelectorArgument="&lt;webctrl id='c32921-10' tag='DIV' /&gt;" Guid="0f9d7ae3-e696-4e14-9ec4-42e59f1e140a" InformativeScreenshot="26ad369b5134fddf6424de0bc64c6f4f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ZHAW Intranet: Informationen A-Z' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQhJREFUWEftl9ENwjAMRDsCIzAKm8AGsAGMwEaMwgiMQP0qTkKy09YkfCDypJNKnFzckLTu0AnYmW6mh+nZUHjuTbOcTdHglmKOkINJnS6mjSlCfTLgdTJpLKvsYIkI0nGOTxIQ3Bhjmcsh49Kdi5oE8GYs+8ux1libczv9ylOcZ20CWsZaOYqBgKup9pg6ioHG9AR6Ar+XAG8wjtz9dS2y7SKdAEaKYSyy7UIxRymAiWKYi2y7UMxRCvCaxghjrkW2XaQTaE1PoCdQnEfHZ6kkq0ElWZiAilIqnm9xNDFHWJRSKis7KuOWK4HX+zdH9IieaFXvzWlxhXl66e9oJfYXnuEHyT8zDCPMjw3PbnWtNQAAAABJRU5ErkJggg==" InformativeScreenshot="ebcf8a883c1da2a16aa7d7b267ff9d90.png" Selector="&lt;html app='msedge.exe' title='Neuer Tab' /&gt;" Url="edge://newtab/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,1024" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,905.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Boolean" Name="rasseExists" />
+              <Variable x:TypeArguments="x:String" Name="RowName" />
+              <Variable x:TypeArguments="x:String" Name="RowNameClean" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="901,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[out_exceptionDescription]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
+            <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[Row]">
+              <ui:GetRowItem.Value>
+                <OutArgument x:TypeArguments="x:String">[RowURL]</OutArgument>
+              </ui:GetRowItem.Value>
+            </ui:GetRowItem>
+            <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[Row]">
+              <ui:GetRowItem.Value>
+                <OutArgument x:TypeArguments="x:String">[RowName]</OutArgument>
+              </ui:GetRowItem.Value>
+            </ui:GetRowItem>
+            <ui:Replace BuilderPattern="[/,]" sap:VirtualizedContainerService.HintSize="484,58.6666666666667" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[RowName]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;\/,&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="%[/,]" RegexOption="IgnoreCase, Compiled" Result="[RowNameClean]">
+              <ui:Replace.Replacement>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:UiElementExists DisplayName="Element Exists 'H3'" Exists="[rasseExists]" sap:VirtualizedContainerService.HintSize="901,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-              <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9f66f2a7-9629-4d78-87bf-917b2f91acb3" InformativeScreenshot="addaa210f6acc4cea079686be4bfdd8e" Selector="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='H3' /&gt;&quot;, rasse)]">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:UiElementExists.Target>
-            </ui:UiElementExists>
-            <If Condition="[rasseExists]" sap:VirtualizedContainerService.HintSize="901,1095" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="480,938" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch Open Details Page" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch.Try>
-                      <Sequence DisplayName="Open Details Page" sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="ui:UiElement" Name="uiAncestor" />
-                          <Variable x:TypeArguments="x:String" Name="uriDetailsPage" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetAncestor Ancestor="[uiAncestor]" DisplayName="Get Ancestor of 'H3'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetAncestor_1" UpLevels="1">
-                          <ui:GetAncestor.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cef10131-15f8-4cfd-9085-9f76306b889b" InformativeScreenshot="514dfd1f7f6c2868264cd56e2be54831" Selector="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='H3' /&gt;&quot;, rasse)]">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:GetAncestor.Target>
-                        </ui:GetAncestor>
-                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute Details Page URI" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
-                          <ui:GetAttribute.Result>
-                            <OutArgument x:TypeArguments="x:String">[uriDetailsPage]</OutArgument>
-                          </ui:GetAttribute.Result>
-                          <ui:GetAttribute.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[uiAncestor]" Id="c6caa736-88cb-4b98-98fb-6357189a9512">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:GetAttribute.Target>
-                        </ui:GetAttribute>
-                        <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Details Page" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[uriDetailsPage]" />
-                      </Sequence>
-                    </TryCatch.Try>
-                    <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ActivityAction x:TypeArguments="s:Exception">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                          </ActivityAction.Argument>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[out_exceptionDescription]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">Kann Details-Seite nicht öffnen für diese Hunderasse</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </ActivityAction>
-                      </Catch>
-                    </TryCatch.Catches>
-                  </TryCatch>
-                  <TryCatch DisplayName="Try Catch Get Image URI Sequence" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch.Try>
-                      <Sequence DisplayName="Get Image URI Sequence" sap:VirtualizedContainerService.HintSize="376,465" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="ui:UiElement" Name="uiFirstImage" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find First Image Element" FoundElement="[uiFirstImage]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
-                          <ui:WaitUiElementAppear.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e13a9989-80d0-4e75-8505-582cec4a18e7" InformativeScreenshot="13bb9404289890594a4716bba5763aad" Selector="&lt;webctrl tag='IMG' class='swiper-slide-image' idx='1' /&gt;">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:WaitUiElementAppear.Target>
-                        </ui:WaitUiElementAppear>
-                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="src" DisplayName="Get Attribute src (Image URI)" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
-                          <ui:GetAttribute.Result>
-                            <OutArgument x:TypeArguments="x:String">[out_imageUri]</OutArgument>
-                          </ui:GetAttribute.Result>
-                          <ui:GetAttribute.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[uiFirstImage]" Id="8b7c741a-694d-49fa-9db7-74fd15031c7c">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:GetAttribute.Target>
-                        </ui:GetAttribute>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[out_imageUri]" />
-                      </Sequence>
-                    </TryCatch.Try>
-                    <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ActivityAction x:TypeArguments="s:Exception">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                          </ActivityAction.Argument>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[out_exceptionDescription]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">Kann Bild nicht finden zur Hunderasse</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </ActivityAction>
-                      </Catch>
-                    </TryCatch.Catches>
-                  </TryCatch>
-                  <TryCatch DisplayName="Try Catch Get Description Sequence" sap:VirtualizedContainerService.HintSize="438,664" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch.Try>
-                      <Sequence DisplayName="Get Description Sequence" sap:VirtualizedContainerService.HintSize="376,437" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="ui:UiElement" Name="uiFirstImage" />
-                          <Variable x:TypeArguments="ui:UiElement" Name="uiFirstParagraph" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'P'" FoundElement="[uiFirstParagraph]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
-                          <ui:WaitUiElementAppear.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ad7d5545-0623-41b1-9c7a-05e74658bbf4" InformativeScreenshot="d6846a005754de77c5a6788f7ba0faf9" Selector="&lt;webctrl parentid='main' tag='P' /&gt;">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:WaitUiElementAppear.Target>
-                        </ui:WaitUiElementAppear>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="GetValue_1">
-                          <ui:GetValue.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[uiFirstParagraph]" Id="f49b0c88-5b0e-450f-93b9-0d13b232e1da">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:GetValue.Target>
-                          <ui:GetValue.Value>
-                            <OutArgument x:TypeArguments="x:String">[out_dogDescription]</OutArgument>
-                          </ui:GetValue.Value>
-                        </ui:GetValue>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[out_dogDescription]" />
-                      </Sequence>
-                    </TryCatch.Try>
-                    <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ActivityAction x:TypeArguments="s:Exception">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                          </ActivityAction.Argument>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[out_exceptionDescription]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">Kann Beschreibung nicht finden zur Hunderasse</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </ActivityAction>
-                      </Catch>
-                    </TryCatch.Catches>
-                  </TryCatch>
-                </Sequence>
-              </If.Then>
+              </ui:Replace.Replacement>
+            </ui:Replace>
+            <If Condition="[RowURL.Contains(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="484,254.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[out_exceptionDescription]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">Hunderasse auf hundeo.com nicht gefunden</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[out_exceptionDescription]" />
                 </Sequence>
               </If.Else>
             </If>
-            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="901,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
           </Sequence>
         </ActivityAction>
-      </ui:OpenBrowser.Body>
-    </ui:OpenBrowser>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
   </Sequence>
 </Activity>
