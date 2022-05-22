@@ -1,6 +1,6 @@
 {
-  "name": "Campus Guru",
-  "description": "Blank Process",
+  "name": "campus-guru-connector",
+  "description": "RPAVA Projekt - Gruppe 3",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.12.3]",
