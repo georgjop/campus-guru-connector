@@ -1,6 +1,6 @@
 {
-  "name": "dog-guru-hunderassenlexikon-connector",
-  "description": "Connects via GUI Integration to https://www.hundund.de/hunderassen/",
+  "name": "campus-guru-connector",
+  "description": "Campus Guru - RPAVA Projekt Gruppe 3",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.10.4]",
