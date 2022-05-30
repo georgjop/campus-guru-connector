@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.info="Zitierleitfaden" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.info="Zitierleitfaden" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="info" Type="InArgument(x:String)" />
     <x:Property Name="out_exception" Type="OutArgument(x:String)" />
@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>871.333333333333,2305.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>847.333333333333,2030</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="92">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -58,10 +58,11 @@
       <x:String>UiPath.Core.Activities.TextModifications</x:String>
       <x:String>UiPath.Activities.System.Workflow.Business</x:String>
       <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -99,15 +100,14 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Bachelorarbeit Scraping Sequence" sap:VirtualizedContainerService.HintSize="602,2240.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Search Database Sequence" sap:VirtualizedContainerService.HintSize="602,1965.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\cosmi\Desktop\Links.xlsx" Name="ExcelPath" />
-      <Variable x:TypeArguments="x:String" Default="https://intra.zhaw.ch/departemente/school-of-management-and-law/studierende/informationen-a-z#c32921" Name="IntranetURL" />
+      <Variable x:TypeArguments="x:String" Default="C:\Users\cosmi\ZHAW\RPA &amp; VA Gruppe 03 - General\Database.xlsx" Name="ExcelPath" />
       <Variable x:TypeArguments="x:String" Name="ItemsURL" />
       <Variable x:TypeArguments="x:String" Name="RowURL" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\cosmi\Desktop\Filename.pdf" Name="PdfPath" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="count" />
+      <Variable x:TypeArguments="x:String" Name="RowName" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DataTable" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -115,48 +115,6 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Intranet" sap:VirtualizedContainerService.HintSize="560,792.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,574.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,83.3333333333333" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[IntranetURL]" Version="V1" />
-            <uix:NClick ClickType="Single" DisplayName="Click 'Bachelorarbeit'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://intra.zhaw.ch/departemente/school-of-management-and-law/studierende/informationen-a-z#c32921" DesignTimeRectangle="1075, 421, 15, 20" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl idx='2' parentid='c32921' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='c32921' tag='SPAN' class='glyphicon' aaname='' /&gt;" Guid="c9a169f2-c8dc-4093-9024-3643501a4f08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAYAAAAYl8YPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGvSURBVEhLrZDNT+JQFMXvn15C7IaaZhYKbmcCmDjRDYquNDMCYZKZaFtqv6DQUvwzztzXj/FRWscgi18P9517Du2j19cEh4KSZI3NZo0kiXMt5rL+3+eyOD3ItGC/mdbrCIeC4jj7EccrRuj+M0XRElG0Yj6vedlhoOUyxGoVQmjBvjOXLfLDzyuF7j2+agqUpo6LX3OEoWBRo7Jv4WdPR7PRhP59mp6TcalDUbhMoHYwNLLAYvG+Ts+1t5xygoHDZS+DE+kwK7yzAszn9Vi3HahypsGZIADNgwn6x5IhOO5j4vt5ONMgEMpMe9Aa8r6Kzq2Z+uT7HgLzAd9KherZEGbgIfVz9Z8G6Kjbe1p//M9Py1KMYeXie774Q6PwGfI8FwLXdeCNu6VP4MLeCJ47QnfnKroYu1m2yJN4yDzftLcvl+9Ea6nSzHDRyNnOCchxXlDm8eJLqVBCbePmaTcjqCwTPPZau0WNFrqj6n0B2fYMtm0zZf2N6/aRVHaE08Gfir03zctqmP1AX2/yG3HR1aR6R4JmMwsCy8q0jo/4JB6HgkzTgGmajNA6PuIb+AurlASoIa3AbwAAAABJRU5ErkJggg==" InformativeScreenshot="175f80bd26200186ee9845f42eb0ca1b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ZHAW Intranet: Informationen A-Z' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="418, 421, 657, 26" ElementType="Text" FriendlyName="'Bachelorarbeit'" FullSelectorArgument="&lt;webctrl parentid='c32921' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='c32921' tag='SPAN' type='' class='' aaname='Bachelorarbeit' check:innerText='Bachelorarbeit' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='New column 0'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='New column 0 Url'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='0' name='Column0' attr='text' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,158.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
-              <uix:NExtractData.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="418, -170, 672, 1185" FriendlyName="'Marktplatz MoLeNa'" FullSelectorArgument="&lt;webctrl id='c32921-10' tag='DIV' /&gt;" Guid="faef1e7b-1184-4807-a129-7876d588ecea" InformativeScreenshot="8b25598750ff49eca50b791b855a0b3b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ZHAW Intranet: Informationen A-Z' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-              </uix:NExtractData.Target>
-            </uix:NExtractData>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQhJREFUWEftl9ENwjAMRDsCIzAKm8AGsAGMwEaMwgiMQP0qTkKy09YkfCDypJNKnFzckLTu0AnYmW6mh+nZUHjuTbOcTdHglmKOkINJnS6mjSlCfTLgdTJpLKvsYIkI0nGOTxIQ3Bhjmcsh49Kdi5oE8GYs+8ux1libczv9ylOcZ20CWsZaOYqBgKup9pg6ioHG9AR6Ar+XAG8wjtz9dS2y7SKdAEaKYSyy7UIxRymAiWKYi2y7UMxRCvCaxghjrkW2XaQTaE1PoCdQnEfHZ6kkq0ElWZiAilIqnm9xNDFHWJRSKis7KuOWK4HX+zdH9IieaFXvzWlxhXl66e9oJfYXnuEHyT8zDCPMjw3PbnWtNQAAAABJRU5ErkJggg==" InformativeScreenshot="ebcf8a883c1da2a16aa7d7b267ff9d90.png" Selector="&lt;html app='msedge.exe' title='Neuer Tab' /&gt;" Url="edge://newtab/" />
-      </uix:NApplicationCard.TargetApp>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </uix:NApplicationCard>
     <Assign sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_exception]</OutArgument>
@@ -167,30 +125,28 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,1121.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="560,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[ExcelPath]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,1121.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1002.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="RowName" />
-            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[Row]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[RowURL]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
             <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[Row]">
               <ui:GetRowItem.Value>
                 <OutArgument x:TypeArguments="x:String">[RowName]</OutArgument>
+              </ui:GetRowItem.Value>
+            </ui:GetRowItem>
+            <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[Row]">
+              <ui:GetRowItem.Value>
+                <OutArgument x:TypeArguments="x:String">[RowURL]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
             <If Condition="[RowName.Contains(info)]" sap:VirtualizedContainerService.HintSize="484,450.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
@@ -236,10 +192,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <If Condition="[count = 0]" sap:VirtualizedContainerService.HintSize="560,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[count = 0]" sap:VirtualizedContainerService.HintSize="560,483.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
