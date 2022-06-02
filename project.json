@@ -1,7 +1,7 @@
 {
   "name": "campus-guru-connector",
   "description": "RPAVA Projekt - Gruppe 3",
-  "main": "Main.xaml",
+  "main": "MainFlowchart.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.Mail.Activities": "[1.15.1]",
@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.4.1.0",
-  "projectVersion": "1.0.11",
+  "projectVersion": "1.0.12",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -50,8 +50,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "fc7dcf75-ce0d-4ec4-b8b5-614bb1b276eb",
+      "filePath": "MainFlowchart.xaml",
+      "uniqueId": "723804cf-4bab-48a5-81c5-9d93da4e474c",
       "input": [],
       "output": []
     }
