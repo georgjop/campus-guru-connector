@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="847.333333333333,3691.33333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="847.333333333333,734.666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
       <x:String>System.Activities</x:String>
@@ -88,10 +88,9 @@
       <AssemblyReference>UiPath.Web</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Scraping and Get PDF Sequence" sap:VirtualizedContainerService.HintSize="630.666666666667,3626.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Scraping and Get PDF Sequence" sap:VirtualizedContainerService.HintSize="376,670" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="C:\Users\cosmi\ZHAW\RPA &amp; VA Gruppe 03 - General\Database.xlsx" Name="ExcelPath" />
       <Variable x:TypeArguments="x:String" Default="https://intra.zhaw.ch/departemente/school-of-management-and-law/studierende/informationen-a-z#c32921" Name="IntranetURL" />
@@ -110,7 +109,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Intranet" sap:VirtualizedContainerService.HintSize="588.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Intranet" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -152,7 +151,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Intranet" sap:VirtualizedContainerService.HintSize="588.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Intranet" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="19551696-a6aa-41bf-a326-f411b3e3ad33" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -194,7 +193,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Homepage" sap:VirtualizedContainerService.HintSize="588.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="240a459f-e795-4ccf-895d-e5fd44a67336" Version="V1">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Homepage" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="240a459f-e795-4ccf-895d-e5fd44a67336" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -225,7 +224,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTable1]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTable1]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -248,7 +247,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTable2]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTable2]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -271,7 +270,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:WriteRange AddHeaders="False" DataTable="[DataTable3]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="588.666666666667,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[ExcelPath]">
+    <ui:WriteRange AddHeaders="False" DataTable="[DataTable3]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[ExcelPath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -279,120 +278,5 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:WriteRange>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DataTableComplete]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="588.666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[ExcelPath]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTableComplete]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588.666666666667,2790" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
-      <ui:ForEachRow.Body>
-        <ActivityAction x:TypeArguments="sd:DataRow">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554.666666666667,2671.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="512.666666666667,190" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[CurrentRow]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[RowName]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="512.666666666667,190" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[CurrentRow]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[RowLink]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <If Condition="[RowLink.Contains(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="512.666666666667,2119.33333333333" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,1924.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="PathPDF" />
-                  </Sequence.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[RowLink]" sap:VirtualizedContainerService.HintSize="434,58.6666666666667" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" ResourcePath="[PathPDF]" TimeoutMS="6000">
-                    <ui:HttpClient.Attachments>
-                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                    </ui:HttpClient.Attachments>
-                    <ui:HttpClient.Cookies>
-                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                    </ui:HttpClient.Cookies>
-                    <ui:HttpClient.Headers>
-                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                    </ui:HttpClient.Headers>
-                    <ui:HttpClient.Parameters>
-                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                    </ui:HttpClient.Parameters>
-                    <ui:HttpClient.UrlSegments>
-                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                    </ui:HttpClient.UrlSegments>
-                  </ui:HttpClient>
-                  <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Neuer Tab" sap:VirtualizedContainerService.HintSize="434,1734" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="fff4ed4a-850e-44f5-a330-f7f0a4f85d7d" Version="V1">
-                    <uix:NApplicationCard.Body>
-                      <ActivityAction x:TypeArguments="x:Object">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1516" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,83.3333333333333" sap2010:WorkflowViewState.IdRef="NGoToUrl_4" Url="[RowLink]" Version="V1" />
-                          <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
-                          <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)]s[u(ctrl)][u(hk)]" Version="V1" />
-                          <uix:NClick ClickType="Double" DisplayName="Double-click 'Bildlauf nach oben'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fff4ed4a-850e-44f5-a330-f7f0a4f85d7d" Version="V1">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable DesignTimeRectangle="219, 168, 26, 26" ElementType="Button" FriendlyName="'Bildlauf nach oben'" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Steuerelementhost' cls='NamespaceTreeControl' title='Namespacestruktursteuerelement' /&gt;&lt;wnd ctrlid='100' title='Navigationsbereich' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='UpButton' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Steuerelementhost' cls='NamespaceTreeControl' title='Namespacestruktursteuerelement' /&gt;&lt;wnd ctrlid='100' title='Navigationsbereich' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='UpButton' role='push button' check:text='Bildlauf nach oben' /&gt;" Guid="d4670353-ab9e-42b9-a7b6-152328bc95a0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADoSURBVEhL7ZOxCoMwFEX9WhE3f0EQ/BZd/RVBXF1sB3VpO75yCxfacIuxNLjkwEESX3IGMbndH3aGyXy52hkm9sa2bcElMRxcEsPBJTEcXPJTeJomq6rK0jR9PbFWc0pyOLyuq9V1/YpSrLGv5l3J4XDXdR9Rin0170oOhcdxtDzPZRj7eK/OvUu8w8uyWFmWMkrxHnPqPCXe4aZpZMwVc+o8JV7hvu8tyzIZcsUc5tU9kHiF27aVkW9iXt0DiVd4GAYrikJGXDGHeXUPJN7fGP/pPM+77v3PxDv8L0kMB5fEcHDJSWGzJ9QABObpDvibAAAAAElFTkSuQmCC" InformativeScreenshot="5eacccf197a1662918079333878cd9d2.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Speichern unter' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                          <uix:NClick ClickType="Single" DisplayName="Click 'ZHAW'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fff4ed4a-850e-44f5-a330-f7f0a4f85d7d" Version="V1">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable DesignTimeRectangle="83, 366, 55, 42" FriendlyName="'ZHAW'" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Steuerelementhost' cls='NamespaceTreeControl' title='Namespacestruktursteuerelement' /&gt;&lt;wnd ctrlid='100' title='Navigationsbereich' /&gt;&lt;ctrl name='ZHAW' role='outline item' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Steuerelementhost' cls='NamespaceTreeControl' title='Namespacestruktursteuerelement' /&gt;&lt;wnd ctrlid='100' title='Navigationsbereich' /&gt;&lt;ctrl name='ZHAW' role='outline item' automationid='' check:text='ZHAW' /&gt;" Guid="b25efb6f-ac57-49db-9493-0bdd9b152f13" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAuCAYAAACWPmGbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAG8SURBVGhD7ZTbEcQgCABTlwVZj9WkmRTjKWKCCprHH8fOZOZyUWQF3eIfYbJaMVmtmKxWTFYrJqsVk9WKyWrFZLXCyO7Rb1vcJo8LBw716d3F+jpwhOjSeL/j+0Bdy6dfLbvn/wcw7plHA8ZkFn1Q2SMGl4K4kH4hX2XzfOf4MRCbn3sEB9+aXCqTNW/L1gWaIJ9ky+bl6kAVh8RLhbjq5fEubRJX+ZInn9M9WUx6aI0vsvAN5wpxZpvgAx+bn1O4JSuenw+yUIEzqavKFLZKsGbOBY9VE1zuhsxaFoILAV7LjkkVsW5Dmfm0ckMVZ52UWMjizSa0Rd2I1TMszm0Sm2hfva4DujjshhGmsrPDDrysLH+uuLbEsVUA4tH18PyWj+x8iiyLic4mv5PFbhGfLh5ZY6wcFZyf14woK15KlBey01bD8W3ClwTk1G3+GW+VS4KXhYlj+w08ll21Gn7vWrxIetKyBFjDRe+TtHS3IIzs4lKiPJVlKj3AxCzVSzmxa5FjMQ3MyF6B5Ue6DQc6uVtHoyZPE8c4UgFK3MUmJuQLSiEmqxWT1YrJasVktWKyWjFZrZisVv5INsYftB8OacmUV+wAAAAASUVORK5CYII=" InformativeScreenshot="a6e85173b237dac712eb813378e8888f.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Speichern unter' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                          <uix:NClick ClickType="Double" DisplayName="Double-click 'RPA &amp; VA Gruppe 03'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fff4ed4a-850e-44f5-a330-f7f0a4f85d7d" Version="V1">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable DesignTimeRectangle="305, 411, 405, 33" ElementType="Text" FriendlyName="'RPA &amp;'" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Elementansicht' cls='DirectUIHWND' /&gt;&lt;ctrl name='Elementansicht' role='list' /&gt;&lt;ctrl automationid='4' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Elementansicht' cls='DirectUIHWND' /&gt;&lt;ctrl name='Elementansicht' role='list' /&gt;&lt;ctrl automationid='4' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' role='editable text' check:text='RPA &amp;amp; VA Gruppe 03 - General' /&gt;" Guid="0e6bfe35-21ef-46c1-8c6e-bf45ce519ca1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZkAAAAlCAYAAACQ2pR0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUXSURBVHhe7ZnbtaMwDEXTUqqhl7SSTtJJqmHADzC25AfgG4a1P/bHBVmWLfscMvP4fr8jAABADzAZAADoBiYDAADdwGQAAKAbmAwAAHQDkwEAgG5gMgAA0A1MBgAAuoHJAABANzAZAADoBiYDAADdwGQAAKAbmAzAzXgPj/HxfI0f4R3AX6ObzHsYH4/psMZIh1eJfb4+27iF9ziYmGF8i+8LRPPp88iYS5id29U3vOXne+ue+Lyem9o9w1uOvw+f8fUM1/wcX584xu9vQNKD87lbTzAZuBIFk4mFwAtFJLJS7Oc1PufLKonEHP98mvfNF9nlXca5v5uMxpmUOrf2/kjdOYOa8/6BmP6O1LStsG/PzPxss6+5M3QK9+wJJgNXotFkJmKRz8RKQuKNajaFPZfB5IzGmDxNgpCKXoj8S+dI3fn57o49B/J+lvZEHnsG9+0JJgNXYrfJbH45tBiSeeZitXEZUtGJxcqKR+mXjWwkM4r4HKi7n1D+D+hmUrUvO85IDXfuCSYDV6LdZKTn2dityZjLvVyA9dfBZlyWrYlYswjnrswp1LY+T9eyv+72L+ZFJFyNdl5NrNPnq4C6d3MOR7zelliD+3BY4opiljF97dwEbPf9LNp7YiisfelbFCeuvTbX5gzM79I+xevAZOBKtJmMvxjx5cwJ8+ZrMRWcNKaC8IIml8nOIQrkBllo5At6oG5Xa7meFVNDUlurycw5tj3xz8NaWmL9WtZ90GoKyK2/ZDIVJrSLHT2pWfvSt/D8OJNo3Uf5DExM+cJzKJ1NTAauRMFk3EFfUERVEgPpcklxjRfeXz4T72sML6LJVydMqVGkF9ZwpG4tztfuCUTBrjHe63aTkWqLBag+Vplf2puQ3D4JY31/4z05leae1K3d1h7vRTy2JVfdx1fc0/hvgF/S8EtG/vJfY+dLERJfNu3wK5dOwApinHdbl4mpvWCx2CRrthyqu8KM6kRCmy99nprnSvyuOlZbR2l9uffKfi+4seV+uj2YYxcyAt3ak8q1y307N5dFWG8Qmx8L8Le0/XOZM5PkgpTEwuDMQKU0PifqNvfwVn6JqGxzypfzaN3lmuJ55Tq09afPe5qMvAfCmfBoojpTc27c+Pqe1tDYk8q1a+J+eq4pLqw9jtXGAvyC5v/4t4c8EqUKsciJWZ2QFITBGaA6h8Jal5z/eN3lS18nEtcwGdVMVGx90h6Z/EUxLBvCHpp6Url2LedpuZSxcaxWB8AvaDYZUViLJqMJZPQ+ezHyOawg5uZQ8Bd3kNZwRt0T0p4F1IqE/NyKcGoyUj/S9dTHlvZCR67b5iuaR6UoN9PUk7q11/XtQC5xL1y+IFarA+AXtJvMhDnE4ddvyWRqhKJoVBMmJhYGd8nM2D1fvX68cDHPqnvG1Z6KS4NIuBxrPUHtQd7FcKNfKEnfJlpi0/lnpj0vCppmhGF+KY8bV8y/k4ae1Kxd61vyfHeudB9tn7axWh0Av2CXyXjxXQ5yLnbCXoRIsBLSCyTi5w4Jx4TvS7kcXmhjczq1bkNgChu2e5cTidUULMPb5QzmXwQ82at0LS2xBi/MAVkTXnD75BHWtwhmQNsHwx7qemIorF3rm/h8Z674/M/7E8eqYwF+gG4y8N+S/krQaYkFAGgFk7khmAwAXAVM5oZgMgBwFTCZG4LJAMBVwGQAAKAbmAwAAHQDkwEAgG5gMgAA0A1MBgAAuoHJAABANzAZAADoxHf8B7cHHYG4wChUAAAAAElFTkSuQmCC" InformativeScreenshot="7bc6a41f8a786a3e1bf2288e5076b314.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Speichern unter' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                          <uix:NClick ClickType="Double" DisplayName="Double-click 'PDFs'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fff4ed4a-850e-44f5-a330-f7f0a4f85d7d" Version="V1">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable DesignTimeRectangle="305, 223, 405, 33" ElementType="Text" FriendlyName="'PDFs'" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Elementansicht' cls='DirectUIHWND' /&gt;&lt;ctrl name='Elementansicht' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Elementansicht' cls='DirectUIHWND' /&gt;&lt;ctrl name='Elementansicht' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' role='editable text' check:text='PDFs' /&gt;" Guid="ef768db1-e1af-4343-a943-f30e6620fe46" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZkAAAAlCAYAAACQ2pR0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGhSURBVHhe7dvLcYMwFEBRWqIaeqEVOqETqlHADgxfA07eBOKzOBtZ0vaOJJw1TZMAIILIABBGZAAIIzIAhBEZAMKIDABhRAaAMCIDQBiRASCMyAAQRmQACCMyAIQRGQDCbEemKlKWZQt5WU/n1WXKV+atzu1t7N0pqpX5ANzSTmTyVNajsT4oRTUbm817qFKxFY61vQH4d85FplWX+XR8MzJPVdGFZva7yAB8hNOR6U8zw+lkJzLDiWZ8+hEZgI9wPjKP8TOR6U8zRar6sYORea4bGYcKgMt787psFIwDkVms2Y1Mncq8jUpepnoYa09EIgNwK+ciMz/FdA5HZjTne5+FISrPKzZfmgHc205k5iFYiUnkSWZnXwCu7fybzNzRN5nx1dfBvSdvMq7KAG4nPjKP32d/zDy6d+97j+kbDQBXFxyZtQf81tnIdN5ZA8CfiovMq9PH7t7LL8kWV24AXN4vRaYNwMKLtUciM99PYABuZzsyAPBDIgNAGJEBIIzIABBGZAAIIzIAhBEZAMKIDABhRAaAMCIDQBiRASBIk74AdEfyJgApDWIAAAAASUVORK5CYII=" InformativeScreenshot="e7b23107d8891cd10feb54c551006309.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Speichern unter' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                          <uix:NClick ClickType="Single" DisplayName="Click 'Speichern'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fff4ed4a-850e-44f5-a330-f7f0a4f85d7d" Version="V1">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable DesignTimeRectangle="1115, 766, 137, 39" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Speichern' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Speichern' check:text='unchecked' /&gt;" Guid="2243e318-ccf3-4cf4-942c-2d6013ba0932" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAI0AAAArCAYAAABFGwtWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAALLSURBVHhe7Zy/btRAEIddwAvkbVzQ8C7uotRIVDyBa4o8hluEoItEB0hYPAEo0jUpInEaPOe1b3d2/Gd8iW8v/hVfcbvrG2vm8+y6cbbb7QgAC5AGmIE0wEwkzdf6L739+Jtev/9B2bvvYKNw/dkD9kE6EkjDC64+/KTbu3t6ePxH+/0ebBSuP3vAPkhxAmnYLF6o/QnYJuwDe+F7EkjDLQkdBviwD+yF70kgDe9l2oVg27AXgSfBD0gDFCANMANpgBlIA8xAGmAG0gAzkAaYgTQnUBUZZXlJtTL3kklYmprKvClKFpKXtbL2KXDxDBJAmpSkqQpdkGYc0pyfBKVxxSsqZS4tIE0y0lRU8FYEaZIlQWlcMbKcylqf76jLvFlXUKWcf4pKuaYuKffWyILrEihnKyd0v17+ryb83Nhua+7mh2I83zY9TZLS9N3GS562rpWG14WCdeOBOC7px2TH22AkTVeoQILm3nxp5D1q57G5saNY4zHUB2MFEpWm5SiFSJqY15IXCjBwTjok/yiclEb+lrQFlR1RxjLEPnRNb00/PhVjXZKWpmO8o8SJjubckx7JJcZDSdpuN/Y0D0kVjC+KfcQ6vgYXIU2L27K8RFml6buWQC3cULE9ZhV0SWwP6/gaXJA0sSQndxqBVuynksYU+4TxNbgoaQ6JiqSR+z0z81whCAsxfc28gi6JvXx8DRKUhrchpXsobyWtNE3yxPpDQuV/qG8cTSwv8VEh3DVhwcXb05yCLom9cHwNEpWmSUhE3FH6LSg6NyjSMZ0EHn4h9ULE99NdYyrootj28TVIUJr5jJ1pwPORnDTyaRyC10Ka84BOA8xAGmDmoqUB5wHSADOQBpgZlQZfjQCSya9G4Ps0QDL5fRp8CQt0cP3Zg8kvYTFffv2hN+U3enXzmbLrT2CjcP3ZA/ZBOhJJA8AUkAaYgTTAyI7+A5gn6zXNG86xAAAAAElFTkSuQmCC" InformativeScreenshot="1856649f3695c6cdd2f81f35fb6817b7.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Speichern unter' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                          <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                        </Sequence>
-                      </ActivityAction>
-                    </uix:NApplicationCard.Body>
-                    <uix:NApplicationCard.TargetApp>
-                      <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQhJREFUWEftl9ENwjAMRDsCIzAKm8AGsAGMwEaMwgiMQP0qTkKy09YkfCDypJNKnFzckLTu0AnYmW6mh+nZUHjuTbOcTdHglmKOkINJnS6mjSlCfTLgdTJpLKvsYIkI0nGOTxIQ3Bhjmcsh49Kdi5oE8GYs+8ux1libczv9ylOcZ20CWsZaOYqBgKup9pg6ioHG9AR6Ar+XAG8wjtz9dS2y7SKdAEaKYSyy7UIxRymAiWKYi2y7UMxRCvCaxghjrkW2XaQTaE1PoCdQnEfHZ6kkq0ElWZiAilIqnm9xNDFHWJRSKis7KuOWK4HX+zdH9IieaFXvzWlxhXl66e9oJfYXnuEHyT8zDCPMjw3PbnWtNQAAAABJRU5ErkJggg==" InformativeScreenshot="2cf9086e70cc3d942bd1196c6b657945.png" Selector="&lt;html app='msedge.exe' title='Neuer Tab' /&gt;" Url="edge://newtab/" />
-                    </uix:NApplicationCard.TargetApp>
-                  </uix:NApplicationCard>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEachRow.Body>
-    </ui:ForEachRow>
   </Sequence>
 </Activity>
